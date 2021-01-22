@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd  } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -13,12 +13,18 @@ export class FooterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
   }
 
   menus: any = [
     { "name": "Home", "url": "home" },
     { "name": "What We Do", "url": "what_we_do" },
-    { "name": "About Us", "url": "about_us" },
+    { "name": "About Us", "url": "about_us"},
     { "name": "Portfolio", "url": "portfolio" },
     { "name": "Location", "url": "location" },
     { "name": "Contacts", "url": "contacts" }

@@ -1,7 +1,10 @@
 <div class="d-flex sticky-top bg tx-tr">
-    <img class="p-2 mr-auto" style="max-width: 190px;" src="https://www.web4exsolution.com/static/images/web4exlogo.png"
-        alt="">
-    <div class="p-2 ">
+    <a href="/home">
+        <img class="p-2 mr-auto" style="max-width: 190px;"
+            src="https://www.web4exsolution.com/static/images/web4exlogo.png" alt="">
+    </a>
+    <div id="headerpage" class="p-2" style="margin-left: 910px;">
         <button type="button" class="btn btn header" *ngFor="let item of menus"
             (click)="menuLink(item.url)">{{item.name}}</button>
     </div>
+</div>
